@@ -11,7 +11,7 @@ public class VariablesNamingConventionCheckTest {
 
     @Test
     public void test() throws Exception {
-        RpgCheckVerifier.verify(new VariablesNamingConventionCheck(), new File("src/test/resources/definitions.rpg"), StandardCharsets.UTF_8);
+        RpgCheckVerifier.verify(new VariablesNamingConventionCheck(), new File(getClass().getResource("/VariablesNamingConventionCheck.rpg").getFile()), StandardCharsets.UTF_8);
     }
 
 }

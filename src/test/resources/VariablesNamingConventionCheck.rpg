@@ -1,7 +1,7 @@
      D variable        S             30A
      D variable2       S              7S 0
      D resultSet       S              7S 0
-     
+
      D @variable       S             30A                                       // Noncompliant {{The name of the variable should match regexp ^[a-z][a-zA-Z0-9]*$}}
      D $variable       S             30A                                       // Noncompliant {{The name of the variable should match regexp ^[a-z][a-zA-Z0-9]*$}}
      D variable#2      S             30A                                       // Noncompliant {{The name of the variable should match regexp ^[a-z][a-zA-Z0-9]*$}}
@@ -9,5 +9,3 @@
      D Variable        S             30A                                       // Noncompliant {{The name of the variable should match regexp ^[a-z][a-zA-Z0-9]*$}}
      D VARIABLE        S             30A                                       // Noncompliant {{The name of the variable should match regexp ^[a-z][a-zA-Z0-9]*$}}
      D V               S             30A                                       // Noncompliant {{The name of the variable should match regexp ^[a-z][a-zA-Z0-9]*$}}
-
-
