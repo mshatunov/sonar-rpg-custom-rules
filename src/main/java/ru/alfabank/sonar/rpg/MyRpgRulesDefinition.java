@@ -1,6 +1,7 @@
 package ru.alfabank.sonar.rpg;
 
 import com.sonarsource.rpg.api.CustomRulesDefinition;
+import ru.alfabank.sonar.rpg.checks.OperationErrorExtenderCheck;
 import ru.alfabank.sonar.rpg.checks.VariablesNamingConventionCheck;
 
 import java.util.Arrays;
@@ -19,7 +20,13 @@ public class MyRpgRulesDefinition implements CustomRulesDefinition {
                 .setName("Variables naming convention check")
                 .setHtmlDescription("Checks variables names for naming convention")
                 .addTags("convention");
-        rule.setDebtRemediationFunction(rule.debtRemediationFunctions().constantPerIssue("3min"));
+        rule.setDebtRemediationFunction(rule.debtRemediationFunctions().constantPerIssue("5min"));
+
+        rule = repository.createRule(OperationErrorExtenderCheck.RULE_KEY)
+                .setName("Operations with error extender without processing check")
+                .setHtmlDescription("Checks operations such as chain, read, delete, etc for error extender (e) without being processed");
+        rule.setDebtRemediationFunction(rule.debtRemediationFunctions().constantPerIssue("5min"));
+
         repository.done();
     }
 

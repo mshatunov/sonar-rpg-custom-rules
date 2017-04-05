@@ -1,0 +1,92 @@
+            Chain GF01LF;
+            SetLL GF01LF;
+            SetGT GF01LF;
+            Read GF01LF;
+            Reade GF01LF;
+            Delete GF01LF;
+            Readp GF01LF;
+            Readpe GF01LF;
+            Callp programm;
+
+            Chain(e) GF01LF;         // Noncompliant
+            SetLL(e) GF01LF;         // Noncompliant
+            SetGT(e) GF01LF;         // Noncompliant
+            Read(e) GF01LF;          // Noncompliant
+            Reade(e) GF01LF;         // Noncompliant
+            Delete(e) GF01LF;        // Noncompliant
+            Readp(e) GF01LF;         // Noncompliant
+            Readpe(e) GF01LF;        // Noncompliant
+            Callp(e) programm;       // Noncompliant
+
+            Chain(e) GF01LF;         // Noncompliant
+            If not %equals();
+              //some code here
+            EndIf;
+
+            Chain(e) GF01LF;
+            If not %error();
+              //some code here
+            EndIf;
+
+            Chain(e) GF01LF;
+            If not %error(GF01LF);
+            EndIf;
+
+            Chain(e) GF01LF;
+            If not %equals() or not %error();
+            EndIf;
+
+            Chain(e) GF01LF;
+            If not %equals();
+              If not %error();
+                //some code here
+              EndIf;
+            EndIf;
+
+            Chain(e) GF01LF;            // Noncompliant
+            Select;
+            When %equals();
+            When not %equals();
+            EndSl;
+
+            Chain(e) GF01LF;
+            Select;
+            When %error();
+            When not %equals();
+            EndSl;
+
+            Chain(e) GF01LF;
+            Select;
+            When %equals();
+            When not %error();
+            EndSl;
+
+            Callp(e) programm;          // Noncompliant
+
+            BegSr subRoutine;
+
+              Chain GF01LF;
+              Chain(e) GF01LF;          // Noncompliant
+
+            EndSr;
+
+            Chain(e) GF01LF;            // Noncompliant
+            exsr abc;
+
+            Chain(e) GF01LF;            // Noncompliant //todo - need to be fixed
+            exsr qwe;
+
+
+            Return;
+
+            Begsr abc;
+
+            endsr;
+
+            Begsr qwe;
+
+              If %error();
+              endif;
+
+            endsr;
+
