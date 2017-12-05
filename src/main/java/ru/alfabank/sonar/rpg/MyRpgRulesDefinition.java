@@ -37,7 +37,7 @@ public class MyRpgRulesDefinition implements CustomRulesDefinition {
 
     @Override
     public List<Class> checkClasses() {
-        return Arrays.asList(VariablesNamingConventionCheck.class);
+        return Arrays.asList(VariablesNamingConventionCheck.class, OperationErrorExtenderCheck.class);
     }
 
 }
